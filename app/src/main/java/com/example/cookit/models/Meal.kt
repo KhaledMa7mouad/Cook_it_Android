@@ -7,14 +7,13 @@ class MealRoot(val meals: List<Meal>)
 
 class Meal(
     @SerializedName(Constants.MEAL_NAME)
-    val name: String,
+    val name: String = "",
     @SerializedName(Constants.MEAL_IMAGE)
-    val image: String,
+    val image: String = "",
     @SerializedName(Constants.MEAL_ID)
-    val id: String,
+    val id: String = "",
     @SerializedName(Constants.MEAL_INSTRUCTIONS)
-    val instructions: String,
+    val instructions: String = "",
     @SerializedName(Constants.MEAL_VIDEO)
-    val video: String
-    
+    val video: String= "",
 )
