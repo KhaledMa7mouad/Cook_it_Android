@@ -1,6 +1,8 @@
 package com.example.cookit.api
 
 import com.example.cookit.constants.Constants
+import com.example.cookit.constants.Constants.INGREDIENT_QUERY
+import com.example.cookit.constants.Constants.LOOKUP_ENDPOINT
 import com.example.cookit.models.CategoryRoot
 import com.example.cookit.models.MealRoot
 import retrofit2.Call
@@ -15,6 +17,6 @@ interface MealAPICallable {
     @GET(Constants.FILTER_ENDPOINT)
     suspend fun getMeals(@Query(Constants.CATEGORY_QUERY) category: String): MealRoot
 
-    @GET(Constants.FILTER_ENDPOINT)
-    suspend fun getRecipe(@Query(Constants.INGREDIENT_QUERY) id: String): MealRoot
+    @GET(LOOKUP_ENDPOINT)
+    suspend fun getRecipe(@Query(INGREDIENT_QUERY) mealId: String): MealRoot
 }

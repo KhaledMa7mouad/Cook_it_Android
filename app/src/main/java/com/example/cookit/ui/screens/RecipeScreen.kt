@@ -1,8 +1,10 @@
 package com.example.cookit.ui.screens
 
 import android.content.Intent
+import android.graphics.Paint.Align
 import android.util.Log
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -21,6 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
@@ -29,6 +32,7 @@ import com.example.cookit.R
 import com.example.cookit.models.Meal
 import com.example.cookit.ui.viewmodels.RecipeViewModel
 
+
 @Composable
 fun RecipeScreen(
     mealId: String,
@@ -36,14 +40,17 @@ fun RecipeScreen(
     viewModel: RecipeViewModel = viewModel()
 ) {
     viewModel.getRecipe(mealId)
-    val meal by viewModel.meals.collectAsState()
-    Log.d("trace", "Recipe: $meal")
+    val meals by viewModel.meals.collectAsState()
+    Log.d("trace", "Recipe: $meals")
 
     val hasError by viewModel.hasError.collectAsState()
     if (hasError)
         Toast.makeText(LocalContext.current, "Check your connection", Toast.LENGTH_SHORT).show()
-    else
+    else if (meals.isNotEmpty()) {
+        val meal = meals[0]
         RecipeContent(meal = meal)
+    }
+
 }
 
 @Composable
@@ -87,18 +94,4 @@ fun RecipeContent(meal: Meal, modifier: Modifier = Modifier) {
         }
 
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun RecipeScreenPreview() {
-    RecipeContent(
-        Meal(
-            "1",
-            "android development is cool",
-            "",
-            "A lot of details will appear here",
-            ""
-        )
-    )
 }

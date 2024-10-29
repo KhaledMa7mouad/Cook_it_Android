@@ -13,27 +13,25 @@ import kotlinx.coroutines.launch
 
 class RecipeViewModel : ViewModel(){
 
-    private val _meals = MutableStateFlow(Meal())
-    val meals = _meals
+    private val _meals = MutableStateFlow<List<Meal>>(emptyList())
+    val meals = _meals.asStateFlow()
 
+    private val _hasError = MutableStateFlow(false)
+    val hasError = _hasError.asStateFlow()
 
-    private val _hasErorr = MutableStateFlow(false)
-    val hasError = _hasErorr.asStateFlow()
-
-    fun getRecipe(id : String) {
+    fun getRecipe(mealId: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 _meals.update {
-                    MealAPIService.callable.getRecipe(id.meals[0])
+                    MealAPIService.callable.getRecipe(mealId).meals
                 }
-                _hasErorr.update { false }
-            } catch (e: Exception) {
-                Log.d("trace", "Error:${e.message}")
-                _hasErorr.update { true }
+                _hasError.update { false }
             }
-
+            catch (e: Exception){
+                _hasError.update { true }
+                Log.d("trace", "Recipe Error: $e")
+            }
         }
-
     }
 
 }
