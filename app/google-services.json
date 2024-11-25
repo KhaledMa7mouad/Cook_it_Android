@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "680774208571",
+    "project_id": "cook-it-83673",
+    "storage_bucket": "cook-it-83673.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680774208571:android:78f374f766edd4b40d201e",
+        "android_client_info": {
+          "package_name": "com.example.cookit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8GslOsqCwyltHofEfdoJZ9zAdmm1DVN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

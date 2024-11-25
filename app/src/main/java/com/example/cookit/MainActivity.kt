@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.cookit.navigation.AppNavHost
+import com.example.cookit.ui.screens.SignUpScreen
+import com.example.cookit.ui.screens.Singnscreen
 import com.example.cookit.ui.theme.CookItTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,6 +24,7 @@ class MainActivity : ComponentActivity() {
             CookItTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                    AppNavHost(modifier = Modifier.padding(innerPadding))
+
                 }
             }
         }
