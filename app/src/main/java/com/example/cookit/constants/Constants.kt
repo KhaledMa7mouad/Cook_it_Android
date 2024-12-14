@@ -12,6 +12,7 @@ object Constants {
     const val CATEGORIES_ENDPOINT = "/api/json/v1/1/categories.php"
     const val FILTER_ENDPOINT = "/api/json/v1/1/filter.php"
     const val LOOKUP_ENDPOINT = "/api/json/v1/1/lookup.php"
+    const val SEARCH_ENDPOINT = "/api/json/v1/1/search.php" // **New endpoint**
     const val CATEGORY_QUERY = "c"
     const val INGREDIENT_QUERY = "i"
 }

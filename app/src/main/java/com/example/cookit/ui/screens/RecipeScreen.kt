@@ -1,10 +1,8 @@
 package com.example.cookit.ui.screens
 
 import android.content.Intent
-import android.graphics.Paint.Align
 import android.util.Log
 import android.widget.Toast
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -22,8 +20,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
-
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
@@ -36,7 +32,6 @@ import com.example.cookit.ui.viewmodels.RecipeViewModel
 @Composable
 fun RecipeScreen(
     mealId: String,
-    modifier: Modifier = Modifier,
     viewModel: RecipeViewModel = viewModel()
 ) {
     viewModel.getRecipe(mealId)

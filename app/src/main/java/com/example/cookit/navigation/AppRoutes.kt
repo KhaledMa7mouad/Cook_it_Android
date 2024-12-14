@@ -3,7 +3,6 @@ package com.example.cookit.navigation
 import CategoryScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -35,7 +34,7 @@ fun AppNavHost(modifier: Modifier = Modifier) {
             arguments = listOf(navArgument(MEAL_ID) { type = NavType.StringType })
         ) {
             val mealId = it.arguments?.getString(MEAL_ID)!!
-            RecipeScreen(mealId, modifier)
+            RecipeScreen(mealId)
         }
         composable(route = SIGNUP_ROUTE) { SignUpScreen(modifier,navController) }
         composable(route = SIGNIN_ROUTE) { Singnscreen(modifier,navController) {
