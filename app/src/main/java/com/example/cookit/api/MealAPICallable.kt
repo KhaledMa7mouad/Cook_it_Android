@@ -17,6 +17,4 @@ interface MealAPICallable {
     @GET(Constants.LOOKUP_ENDPOINT)
     suspend fun getRecipe(@Query(Constants.INGREDIENT_QUERY) mealId: String): MealRoot
 
-    @GET(Constants.SEARCH_ENDPOINT)
-    suspend fun searchMealsByName(@Query("s") mealName: String): MealRoot
 }

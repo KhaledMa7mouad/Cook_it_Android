@@ -83,7 +83,7 @@ fun RecipeContent(meal: Meal, modifier: Modifier = Modifier) {
                     painter = painterResource(id = R.drawable.ic_video),
                     contentDescription = "Recipe Video",
                     //Disable default tint used by the theme
-                    tint = Color.Unspecified
+                    tint = Color.Red
                 )
             }
         }
